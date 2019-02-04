@@ -12,10 +12,10 @@
   flush_interval = "1m"
   flush_jitter = "15s"
 
-[[outputs.influxdb]]
-  urls = ["<%= p("telegraf.influxdb.url") %>"]
-  database = "<%= p("telegraf.influxdb.database") %>"
-  retention_policy = "<%= p("telegraf.influxdb.retention_policy") %>"
+[[outputs.wavefront]]
+  host = "<%= p("telegraf.wavefront.host") %>"
+  port = <%= p("telegraf.wavefront.port") %>
+  prefix = "<%= p("telegraf.wavefront.prefix") %>"
 
 [[inputs.cpu]]
   percpu = false
